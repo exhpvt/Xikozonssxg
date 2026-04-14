@@ -1,0 +1,2 @@
+python-telegram-bot[job-queue]==22.0
+psutil==6.1.1
