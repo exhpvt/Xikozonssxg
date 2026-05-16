@@ -565,4 +565,15 @@ async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
     # ── Running bots ──
     elif action == "running_all":
+total = len(running_bots)
+    running = sum(1 for bid in running_bots if get_status(bid) == "running")
+
+    await update.message.reply_text(
+        f"🔢 Running Bots\n\n"
+        f"Total Bots: {total}\n"
+        f"Running: {running}",
+        reply_markup=InlineKeyboardMarkup([
+            [au("menu", "🔙 Back ↗")]
+        ])
+    )
      
